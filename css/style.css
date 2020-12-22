@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 80%;
+  margin-left: 10%;
+  float: left;
+}
+
+.box {
+  width: 32%;
+
+  background-color: dodgerblue;
+  margin: 200px auto;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  float: left;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.box-mid {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.box img {
+  display: block;
+  width: 100%;
+}
+
+.box::before,
+.box::after {
+  width: 100%;
+  display: block;
+  padding: 15px;
+  position: absolute;
+
+  transition: 1s;
+}
+.box::before {
+  background-color: dodgerblue;
+  content: attr(date-brand);
+
+  bottom: 100%;
+  left: 0;
+}
+
+.box:hover::before {
+  transform: translateY(100%);
+}
+
+.box::after {
+  background-color: tomato;
+  content: attr(date-price);
+  top: 100%;
+  left: 0;
+}
+
+.box:hover::after {
+  transform: translateY(-100%);
+}
+
+.line {
+  width: 100%;
+  float: left;
+  height: 50px;
+  background-color: #333;
+}
